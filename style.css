@@ -1,0 +1,82 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+button {
+  text-transform: uppercase;
+  padding: 12px 20px;
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+button:hover {
+  padding: 12px 20px;
+  border: 1px solid #fff;
+  color: #000;
+  background-color: #fff;
+}
+
+.header {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-image: url("/assets/traingles.jpg");
+  background-blend-mode: multiply;
+  background-size: cover;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  color: #fff;
+  padding: 0;
+  box-shadow: -2px 10px 33px -13px rgba(0, 0, 0, 0.75);
+  z-index: 999;
+  position: relative;
+}
+.header h1 {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+  padding: 30px 0 20px 0;
+}
+.header .divider {
+  width: 250px;
+  height: 2px;
+  background-color: #be271e;
+  margin: 0 auto;
+}
+.header h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 20px 0 30px 0;
+}
+
+.faq {
+  text-align: center;
+  background-color: #730E09;
+  color: #fff;
+  margin-top: -60px;
+  position: relative;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: -2px 10px 33px -13px rgba(0, 0, 0, 0.75);
+  padding: 60px 50px 30px 50px;
+  transition: all 0.5s ease;
+}
+.faq.next {
+  padding-top: 70px;
+  transform: translateY(-200px);
+}
+.faq.active {
+  display: block;
+}
+.faq.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*# sourceMappingURL=style.css.map */
