@@ -11,34 +11,57 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <script src="/node_modules/mustache/mustache.js"></script>
+
+    <section id="instructions">
+        <span onclick="instructions('hide')" class="close-button">X</span>
+        <h2>Instrukcja schematu</h2>
+        <ol>
+            <li>Schemat obsługuje się poprzez wybieranie odpowiednich opcji "dialogowych". W zależności od wybranehj opcji wyświetlany jest kolejny krok.</li>
+            <li>Dłuższe przytrzymanie kursora na przycisku pozwala podejrzeć następny krok, bez jego wybierania</li>
+            <li>Wybrana ścieżka jest zaznaczana poprzed podświetlenie naciśniętych do tej pory przycisków</li>
+            <li>Aby powrócić do dowolnego pytania i zaznaczyć inną opcję dialogową, naley po prostu powrócić do żądanego modułu i wybrać drugą, niepodświetloną opcję</li>
+        </ol>
+        <h3>Przydatne linki</h3>
+        <ul>
+            <li><a target="_blank" href="https://prosolutions.pl">Strona główna PS</a></li>
+            <li><a target="_blank" href="https://stratasys.com">Strona główna Stratasys</a></li>
+            <li><a target="_blank" href="https://xactmetal.com">Strona główna Xacta</a></li>
+            <li><a target="_blank" href="https://prosolutions.egito.pl">Nasz CRM</a></li>
+        </ul>
+    </section>
+
     <section class="header">
         <h1>Schemat postępowania handlowego</h1>
         <div class="divider"></div>
         <h2>Prosolutions Majewscy Sp. J.</h2>
+        <button class="header-button" onclick="instructions('show');">Instrukcja</button>
     </section>
 
-    <section class="faq first" style="z-index: 10;">
-        <h3>To jest jakaś przykładowa treść</h3>
-        <p>Tu może być pytanie lub np. jakieś ostrzenie - to w każdym razie będzie obecne w templatce JS</p>
-        <button onclick="answer1();">
-            Opcja 1
+    <section class="faq first" id="firstQuestion" style="z-index: 100;">
+        <h3>Przychodzi nowy mail</h3>
+        <p>Jeśli się tym nie zajmujesz, oznacz jako nieprzeczytane.
+            <br>Jeśli się zajmujesz, odpowiedz "Biorę" na info@prosolutions.pl</p>
+        <button onmouseover="show(isOrder, this);">
+            Zajmuję się
         </button>
-        <button>
-            Opcja 2
-        </button>
-    </section>
-
-    <section class="faq next" style="z-index: 9;" id="faqSignatureName">
-        <h3>To jest jakaś przykładowa treść</h3>
-        <p>Tu może być pytanie lub np. jakieś ostrzenie - to w każdym razie będzie obecne w templatce JS</p>
-        <button>
-            Opcja 1
-        </button>
-        <button>
-            Opcja 2
+        <button onmouseover="show(end, this);">
+            Nie zajmuję się
         </button>
     </section>
 
+    <div id="answers"></div>
+
+    <script id="content" type="x-tmpl-mustache">
+        <h3>{{title}}</h3>
+        <p>{{text}}</p>
+        {{#buttons}}
+        <button onmouseover="{{buttonFunction}}">{{buttonName}}</button>
+        {{/buttons}}
+    </script>
+
+    <script src="data.js"></script>
     <script src="script.js"></script>
+    <script src="instructions.js"></script>
 </body>
 </html>

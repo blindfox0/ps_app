@@ -39,6 +39,11 @@ body {
     margin: 0;
     padding: 0;
     background-color: $primaryBackground;
+    min-height: 3000px;
+
+    p {
+        line-height: 1.8;
+    }
 }
 
 button {
@@ -69,7 +74,7 @@ button {
         text-transform: uppercase;
         font-weight: 700;
         margin: 0;
-        padding: 30px 0 20px 0;
+        padding: 30px 20px 20px 20px;
     }
 
     .divider {
@@ -84,6 +89,10 @@ button {
         text-transform: uppercase;
         font-weight: 400;
         padding: 20px 0 30px 0;
+    }
+
+    button {
+        margin-bottom: 50px;
     }
 }
 
@@ -102,8 +111,8 @@ button {
     &.next {
         padding-top: 70px;
         transform: translateY(-200px);
-        // display: none;
-        // opacity: 0;
+        display: none;
+        opacity: 0;
     }
 
     &.active {
@@ -114,4 +123,40 @@ button {
         opacity: 1;
         transform: translateY(0);
     }
+
+    &.partialy-visible {
+        opacity: 0.5;
+        transform: translateY(0);
+    }
+}
+
+#instructions {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    color: $primaryBlack;
+    background-color: $primaryBackground;
+    padding: 50px;
+    opacity: 0;
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+    line-height: 1.4;
+
+    h2 {
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 400;
+        padding: 20px 0 30px 0;
+    }
+
+    span {
+        display: block;
+        position: absolute;
+        right: 50px;
+        top: 50px;
+        cursor: pointer;
+    }
+    
 }
